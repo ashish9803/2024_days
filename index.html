@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clickable Image</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; /* Prevent scrolling */
+        background-image: url('bg.jpg');
+        background-size: cover;
+        font-family: Arial, sans-serif;
+    }
+    #clickMeText {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 32px;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        padding: 15px 30px;
+        border-radius: 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+    }
+    #clickMeText:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Maintain aspect ratio and cover entire container */
+    }
+    #largeImageText {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-style: bold;
+        transform: translateX(-50%);
+        font-size: 29px;
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        z-index: 1;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+</style>
+</head>
+<body>
+
+<div id="clickMeText">Click me</div>
+<img id="largeImage" src="rose.jpg" alt="Large Image" style="display: none;">
+<div id="largeImageText">Happy Rose Day Bobu</div>
+
+<script>
+    document.getElementById('clickMeText').addEventListener('click', function(event) {
+        document.getElementById('clickMeText').style.display = 'none';
+        document.getElementById('largeImage').style.display = 'block';
+        document.getElementById('largeImageText').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
